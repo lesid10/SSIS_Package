@@ -1,0 +1,1355 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/16/2020 9:04:38 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ID34ME8"
+  DTS:CreatorName="DESKTOP-ID34ME8\user"
+  DTS:DTSID="{5AC9D2B2-F2B8-41FA-A4D1-A9683B9B0D15}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{EFE627D3-5B0A-406B-AE89-0A8A5EA9FAE6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D90EF997-A247-4DA4-81E9-9266779B534D}"
+      DTS:ObjectName="DESKTOP-ID34ME8.DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-ID34ME8;Initial Catalog=DWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SSIS LOOKUP TRANSFORMATION"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{F4D37DD9-0649-426F-B163-41242E9142AD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SSIS LOOKUP TRANSFORMATION"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination SqlServer"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[utilisateurs]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].Columns[matricule]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="matricule"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[matricule]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[matricule]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].Columns[nom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="nom"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[nom]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[nom]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].Columns[prenom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="prenom"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[prenom]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[prenom]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[email]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[email]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].Columns[motDePasse]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="motDePasse"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[motDePasse]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[motDePasse]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].Columns[type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="type"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[type]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[type]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].Columns[lieu_travail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="lieu_travail"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[lieu_travail]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[lieu_travail]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[matricule]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="matricule" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[prenom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="prenom" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[motDePasse]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="motDePasse" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB].ExternalColumns[lieu_travail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="lieu_travail" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Enregistrement existe ou pas"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT matricule  FROM dbo.utilisateurs</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT matricule  FROM dbo.utilisateurs) [refTable]
+where [refTable].[matricule] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="matricule" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[matricule]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Inputs[Entrée de recherche].Columns[matricule]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="matricule"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[matricule]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">matricule</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Enreistrement modifier ou pas"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT nom, prenom, email, motDePasse, type, lieu_travail FROM dbo.utilisateurs</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT nom, prenom, email, motDePasse, type, lieu_travail FROM dbo.utilisateurs) [refTable]
+where [refTable].[nom] = ? and [refTable].[prenom] = ? and [refTable].[email] = ? and [refTable].[motDePasse] = ? and [refTable].[type] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="nom" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="prenom" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="email" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="motDePasse" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="type" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="lieu_travail" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[nom]};#{Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[prenom]};#{Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[email]};#{Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[motDePasse]};#{Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[type]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche].Columns[nom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="nom"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[nom]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">nom</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche].Columns[prenom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="prenom"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[prenom]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">prenom</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="email"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[email]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">email</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche].Columns[motDePasse]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="motDePasse"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[motDePasse]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">motDePasse</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche].Columns[type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="type"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[type]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">type</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Requête de modification SqlServer"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.utilisateurs
+SET nom = ?, prenom = ?, email = ?, motDePasse = ?, type = ?,
+lieu_travail = ? WHERE matricule = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ID34ME8.DWH]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].Columns[nom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="nom"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[nom]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].Columns[prenom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="prenom"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[prenom]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[email]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].Columns[motDePasse]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="motDePasse"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[motDePasse]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].Columns[type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="type"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[type]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].Columns[lieu_travail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="lieu_travail"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[lieu_travail]" />
+                    <inputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].Columns[matricule]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="matricule"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[matricule]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="Source ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source ODBC"
+              name="Source MySQL"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nom de la table à extraire."
+                  expressionType="Notify"
+                  name="TableName"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT matricule, nom, prenom, email, motDePasse, type, lieu_travail FROM utilisateurs</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifiez le nombre de lignes extraites par lot."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Détermine l'allocation de taille de segment pour les colonnes LOB"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine la façon dont le composant expose les colonnes CHAR. Si la valeur est False, les colonnes CHAR sont exposées comme des chaînes (multi)octets (DT_STR), si la valeur est True, les colonnes CHAR sont exposées comme des chaînes étendues (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Durée d'attente, en secondes, de l'exécution d'une instruction SQL avant le retour à l'application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Page de codes à utiliser quand les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Méthode utilisée pour extraire les données."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Type de données ODBC C pour la liaison de données numériques."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Détermine la façon dont le composant lie les colonnes des types de chaîne (multi)octet (par ex., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). Les options sont : Unicode (SQL_C_WCHAR) et ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Mode utilisé pour accéder à la base de données."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Connections[ODBCConnection]"
+                  connectionManagerID="{7B90930E-E28A-4E2C-9207-BA6919F260BC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[myodbc]"
+                  description="Connexion ODBC en cours d'exécution utilisée pour accéder à la base de données."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC]"
+                  errorRowDisposition="FailComponent"
+                  name="Sortie de la source ODBC"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[matricule]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[matricule]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[matricule]"
+                      name="matricule" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[nom]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[nom]"
+                      name="nom" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[prenom]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[prenom]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[prenom]"
+                      name="prenom" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[email]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[motDePasse]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[motDePasse]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[motDePasse]"
+                      name="motDePasse" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[type]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[type]"
+                      name="type" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[lieu_travail]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[lieu_travail]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].Columns[lieu_travail]"
+                      name="lieu_travail" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[matricule]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="matricule" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[prenom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="prenom" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[motDePasse]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="motDePasse" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[lieu_travail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="lieu_travail" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de la source ODBC">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[matricule]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[matricule]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[matricule]"
+                      name="matricule" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[nom]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[nom]"
+                      name="nom" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[prenom]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[prenom]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[prenom]"
+                      name="prenom" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[email]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[motDePasse]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[motDePasse]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[motDePasse]"
+                      name="motDePasse" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[type]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[type]"
+                      name="type" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[lieu_travail]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC].ExternalColumns[lieu_travail]"
+                      length="255"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[lieu_travail]"
+                      name="lieu_travail" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de la source ODBC]"
+              endId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Inputs[Entrée de recherche]"
+              name="Sortie de la source ODBC"
+              startId="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL.Outputs[Sortie de la source ODBC]" />
+            <path
+              refId="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Inputs[Entrée de recherche]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de recherche sans correspondance]"
+              endId="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de recherche sans correspondance1]"
+              endId="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas.Outputs[Sortie de recherche sans correspondance]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="239,42"
+          Id="Package\SSIS LOOKUP TRANSFORMATION"
+          TopLeft="168,90" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SSIS LOOKUP TRANSFORMATION">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="216,42"
+          Id="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas"
+          TopLeft="166,98" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\SSIS LOOKUP TRANSFORMATION\Requête de modification SqlServer"
+          TopLeft="363,294" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas"
+          TopLeft="376,205" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL"
+          TopLeft="200,5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer"
+          TopLeft="5,204" />
+        <EdgeLayout
+          Id="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de la source ODBC]"
+          TopLeft="273.75,47">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de recherche sans correspondance1]"
+          TopLeft="485,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.50201171875,13.9453125,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="239.333333333333,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.333333333333,64"
+              Start="0,0"
+              End="-144.333333333333,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8823529411765" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.8823529411765"
+                    Point2="0,25.8823529411765"
+                    Point3="-4,25.8823529411765" />
+                  <mssgle:LineSegment
+                    End="-140.333333333333,25.8823529411765" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.333333333333,25.8823529411765"
+                    Point2="-144.333333333333,25.8823529411765"
+                    Point3="-144.333333333333,29.8823529411765" />
+                  <mssgle:LineSegment
+                    End="-144.333333333333,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-163.668678385417,30.8823529411765,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSIS LOOKUP TRANSFORMATION.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="308.666666666667,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="177.833333333333,65"
+              Start="0,0"
+              End="177.833333333333,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2867647058824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2867647058824"
+                    Point2="0,26.2867647058824"
+                    Point3="4,26.2867647058824" />
+                  <mssgle:LineSegment
+                    End="173.833333333333,26.2867647058824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="173.833333333333,26.2867647058824"
+                    Point2="177.833333333333,26.2867647058824"
+                    Point3="177.833333333333,30.2867647058824" />
+                  <mssgle:LineSegment
+                    End="177.833333333333,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-2.76034505208334,31.2867647058824,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSIS LOOKUP TRANSFORMATION\Enregistrement existe ou pas">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSIS LOOKUP TRANSFORMATION\Source MySQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSIS LOOKUP TRANSFORMATION\Destination SqlServer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSIS LOOKUP TRANSFORMATION\Enreistrement modifier ou pas">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,426 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/22/2020 3:59:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ID34ME8"
+  DTS:CreatorName="DESKTOP-ID34ME8\user"
+  DTS:DTSID="{B80DC655-F3C0-41A0-8194-AFA80B1F6E3D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{D744081B-4C1B-4DCE-A2FE-FDFBC04E3FF3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Pivot"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{54915426-6E17-4936-A9A5-17F2CB407A9D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pivot"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Pivot\Pivot"
+              componentClassID="Microsoft.Pivot"
+              contactInfo="Tableau croisé dynamique;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Compacte un flux de données d'entrée en le faisant pivoter sur une valeur de colonne, le rendant ainsi moins normalisé. Les données d'entrée doivent être triées d'après la colonne de tableau croisé dynamique, car un tableau croisé dynamique se produit chaque fois que des données changent dans la colonne de tableau croisé dynamique. Remarque : les lignes en double entraîneront l'échec de cette transformation."
+              name="Pivot"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="La transformation Pivot ignore les lignes contenant des valeurs non reconnues dans la colonne Clé de tableau croisé dynamique et indique la liste complète de valeurs sans correspondance à l'issue de l'exécution de DataFlow. Utile pour collecter une liste de valeurs de lignes d'entrée pouvant être utilisées pour générer automatiquement les colonnes de sortie."
+                  name="PassThroughUnmatchedPivotKeys">true</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Pivot\Pivot.Inputs[Entrée croisée dynamique par défaut]"
+                  hasSideEffects="true"
+                  name="Entrée croisée dynamique par défaut">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Pivot\Pivot.Inputs[Entrée croisée dynamique par défaut].Columns[attribut]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="attribut"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[attribut]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Décrit la manière dont la colonne d'entrée participe à l'opération croisée dynamique. Elle peut aider à définir un ensemble d'enregistrements correspondants. Elle peut contenir la clé identifiant de manière unique la ligne au sein de l'ensemble correspondant et sur laquelle les valeurs sont croisées dynamiquement. Elle peut contenir une valeur qui se trouve transférée dans une colonne croisée dynamique, ou qui passe simplement dans le champ dynamique sans être modifiée."
+                          name="PivotUsage">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Pivot\Pivot.Inputs[Entrée croisée dynamique par défaut].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Décrit la manière dont la colonne d'entrée participe à l'opération croisée dynamique. Elle peut aider à définir un ensemble d'enregistrements correspondants. Elle peut contenir la clé identifiant de manière unique la ligne au sein de l'ensemble correspondant et sur laquelle les valeurs sont croisées dynamiquement. Elle peut contenir une valeur qui se trouve transférée dans une colonne croisée dynamique, ou qui passe simplement dans le champ dynamique sans être modifiée."
+                          name="PivotUsage">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Pivot\Pivot.Inputs[Entrée croisée dynamique par défaut].Columns[valeurText]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="valeurText"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[valeurText]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Décrit la manière dont la colonne d'entrée participe à l'opération croisée dynamique. Elle peut aider à définir un ensemble d'enregistrements correspondants. Elle peut contenir la clé identifiant de manière unique la ligne au sein de l'ensemble correspondant et sur laquelle les valeurs sont croisées dynamiquement. Elle peut contenir une valeur qui se trouve transférée dans une colonne croisée dynamique, ou qui passe simplement dans le champ dynamique sans être modifiée."
+                          name="PivotUsage">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Pivot\Pivot.Outputs[Sortie croisée dynamique par défaut]"
+                  name="Sortie croisée dynamique par défaut">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Pivot\Pivot.Outputs[Sortie croisée dynamique par défaut].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Pivot\Pivot.Outputs[Sortie croisée dynamique par défaut].Columns[id]"
+                      name="id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Identificateur de traçabilité d'une colonne d'entrée contenant la valeur PivotedValue ou la valeur -1. Cette dernière indique que la colonne n'est pas utilisée dans une opération croisée dynamique."
+                          name="SourceColumn">#{Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[id]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie une valeur correspondant à une des valeurs possibles de la colonne d'entrée marquée en tant que clé de tableau croisé dynamique par la propriété PivotUsage."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Pivot\Pivot.Outputs[Sortie d'erreur de tableau croisé dynamique]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de tableau croisé dynamique"
+                  synchronousInputId="Package\Pivot\Pivot.Inputs[Entrée croisée dynamique par défaut]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Pivot\Pivot.Outputs[Sortie d'erreur de tableau croisé dynamique].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Pivot\Pivot.Outputs[Sortie d'erreur de tableau croisé dynamique].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Pivot\Pivot.Outputs[Sortie d'erreur de tableau croisé dynamique].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Pivot\Pivot.Outputs[Sortie d'erreur de tableau croisé dynamique].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Pivot\Source ODBC"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="Source ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source ODBC"
+              name="Source ODBC"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nom de la table à extraire."
+                  expressionType="Notify"
+                  name="TableName"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT reponses.sequenceRep as id, questions.corpsQuestion as attribut ,reponses.valeurText as valeurText ,reponses.valeurNum as valeurNum FROM activites,axes,questions,questionnaire,reponses WHERE axes.idAxe = questions.idAxe and questions.idQuestion = questionnaire.idQuestion and reponses.idQuestionnaire = questionnaire.idQuestionnaire and questionnaire.idActivite = activites.idActivite and activites.idActivite = 7 and axes.idAxe = 15 ORDER BY id ASC</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifiez le nombre de lignes extraites par lot."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Détermine l'allocation de taille de segment pour les colonnes LOB"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine la façon dont le composant expose les colonnes CHAR. Si la valeur est False, les colonnes CHAR sont exposées comme des chaînes (multi)octets (DT_STR), si la valeur est True, les colonnes CHAR sont exposées comme des chaînes étendues (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Durée d'attente, en secondes, de l'exécution d'une instruction SQL avant le retour à l'application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Page de codes à utiliser quand les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Méthode utilisée pour extraire les données."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Type de données ODBC C pour la liaison de données numériques."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Détermine la façon dont le composant lie les colonnes des types de chaîne (multi)octet (par ex., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). Les options sont : Unicode (SQL_C_WCHAR) et ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Mode utilisé pour accéder à la base de données."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Pivot\Source ODBC.Connections[ODBCConnection]"
+                  connectionManagerID="{7B90930E-E28A-4E2C-9207-BA6919F260BC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[myodbc]"
+                  description="Connexion ODBC en cours d'exécution utilisée pour accéder à la base de données."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC]"
+                  errorRowDisposition="FailComponent"
+                  name="Sortie de la source ODBC"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[id]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[id]"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[attribut]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[attribut]"
+                      length="255"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[attribut]"
+                      name="attribut" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[valeurText]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[valeurText]"
+                      length="255"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[valeurText]"
+                      name="valeurText" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[valeurNum]"
+                      dataType="numeric"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[valeurNum]"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].Columns[valeurNum]"
+                      name="valeurNum"
+                      precision="10" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[attribut]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="attribut" />
+                    <externalMetadataColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[valeurText]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="valeurText" />
+                    <externalMetadataColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[valeurNum]"
+                      dataType="numeric"
+                      name="valeurNum"
+                      precision="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de la source ODBC">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[id]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[id]"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[attribut]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[attribut]"
+                      length="255"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[attribut]"
+                      name="attribut" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[valeurText]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[valeurText]"
+                      length="255"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[valeurText]"
+                      name="valeurText" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[valeurNum]"
+                      dataType="numeric"
+                      externalMetadataColumnId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC].ExternalColumns[valeurNum]"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[valeurNum]"
+                      name="valeurNum"
+                      precision="10" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Pivot\Source ODBC.Outputs[Sortie d'erreur de la source ODBC].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Pivot.Paths[Sortie de la source ODBC]"
+              endId="Package\Pivot\Pivot.Inputs[Entrée croisée dynamique par défaut]"
+              name="Sortie de la source ODBC"
+              startId="Package\Pivot\Source ODBC.Outputs[Sortie de la source ODBC]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="102,42"
+          Id="Package\Pivot"
+          TopLeft="218,186" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Pivot">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Pivot\Source ODBC"
+          TopLeft="217,20" />
+        <NodeLayout
+          Size="102,42"
+          Id="Package\Pivot\Pivot"
+          TopLeft="199,147" />
+        <EdgeLayout
+          Id="Package\Pivot.Paths[Sortie de la source ODBC]"
+          TopLeft="288,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38,85"
+              Start="0,0"
+              End="-38,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.5"
+                    Point2="0,42.5"
+                    Point3="-4,42.5" />
+                  <mssgle:LineSegment
+                    End="-34,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34,42.5"
+                    Point2="-38,42.5"
+                    Point3="-38,46.5" />
+                  <mssgle:LineSegment
+                    End="-38,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Pivot\Source ODBC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

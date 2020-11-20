@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="myodbc"
+  DTS:DTSID="{7B90930E-E28A-4E2C-9207-BA6919F260BC}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Dsn=myodbc;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
